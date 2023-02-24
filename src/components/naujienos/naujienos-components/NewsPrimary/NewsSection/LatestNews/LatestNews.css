@@ -1,0 +1,43 @@
+.latest-news {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.post-card-image-big img {
+    height: 240px;
+    width: 324px;
+    object-fit: cover;
+}
+
+.post-card-info {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    gap: 10px;
+}
+
+.post-card-category {
+    width: 100%;
+    font-size: 12px;
+    font-weight: 700;
+    color: blue;
+    text-transform: uppercase;
+}
+
+.post-card-info .news-article {
+    width: 100%;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.post-card-date,
+.audio-date {
+    width: 100%;
+    color: grey;
+    font-size: 12px;
+    font-weight: 700;
+}

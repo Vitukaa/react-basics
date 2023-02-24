@@ -1,0 +1,26 @@
+.older-news-card {
+    width: calc((100% - 30px) / 2);
+    display: flex;
+    gap: 20px
+}
+
+.post-card-image-small>* {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.post-card-info-small {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+}
+
+.post-card-info-small .news-article {
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0;
+
+}

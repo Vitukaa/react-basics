@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bw Nista Int', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.71;
+}
+
+.container {
+    max-width: 1230px;
+    box-sizing: border-box;
+    padding: 30px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgb(237, 237, 237);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+h1 {
+    font-size: 72px;
+    margin: 0;
+    /* margin-top: 40px;
+    margin-bottom: 32px; */
+    font-family: 'Bw Gradual', Arial, sans-serif;
+    line-height: 1;
+}
+
+h2 {
+    font-family: 'Bw Gradual', Arial, sans-serif;
+    font-size: 24px;
+    margin: 0;
+    line-height: 1;
+}
+
+
+
+.main-content {
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+    gap: 30px;
+}
+
+
+
+
+
+
+.course-main {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 30px;
+}
+

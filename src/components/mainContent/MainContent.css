@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Bw Nista Int,Arial,sans-serif;
+  }
+  
+  .main-content.home-page {
+    display: block;
+  }
+
+  p {
+    line-height: 1.74;
+  }
+  
+
+  
+  .container-main {
+    max-width: 1230px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .facts-header {
+    font-size: 70px;
+  }
+  
+  .facts-description {
+    max-width: 470px;
+    margin-left: 200px;
+  }
+  
+  .facts-description p {
+    margin: 0;
+  }
+  
+  .facts-list-wrapper {
+    margin-left: 200px;
+    margin-top: 88px;
+  }
+  
+  ul.facts-list {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  

@@ -1,0 +1,30 @@
+.events-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.talents-event {
+    width: 100%;
+}
+
+.ca-talents-image{
+    background-color: black;
+    text-align: center;
+}
+
+
+
+.ca-talents-image>* {
+    height: 230px;
+    width: 345px;
+    object-fit: cover;
+}
+
+.events-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+

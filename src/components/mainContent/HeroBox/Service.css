@@ -1,0 +1,14 @@
+
+.service-item {
+    margin-bottom: 74px;
+  }
+  
+  .service-item p {
+    margin: 0;
+  }
+  
+  .service-item:first-of-type {
+    border-right: solid;
+    border-color: white;
+  }
+  

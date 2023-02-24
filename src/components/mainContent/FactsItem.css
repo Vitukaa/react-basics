@@ -1,0 +1,14 @@
+li.facts-item {
+    margin-bottom: 88px;
+    font-weight: 700;
+  }
+  
+  .fact-value {
+    font-size: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .fact-value.small {
+    font-size: 72px;
+    margin-bottom: 21px;
+  }

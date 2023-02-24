@@ -1,0 +1,54 @@
+.course-aside {
+    background-color: rgb(237, 237, 237);;
+    /* padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap:20px */
+}
+
+.programs-filter {
+    position: sticky;
+    top: 30px;
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap:20px
+}
+
+.filter-item-name {
+    line-height: 1.71;
+    font-weight: 700;
+    margin-bottom: 3px;
+    font-size: 14px;
+    display: block;
+}
+
+select {
+    width: 100%;
+}
+
+.medium-button {
+    border-radius: 50px;
+    display: block;
+    width: 100%;
+    padding: 13px 20px;
+    background-color: #f2f2f2;
+    border: none;
+    text-transform: uppercase;
+}
+
+.medium-button-blue {
+    border-radius: 50px;
+    display: block;
+    width: 100%;
+    padding: 13px 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #1200ff;
+    color:#1200ff;
+    cursor: pointer;
+}

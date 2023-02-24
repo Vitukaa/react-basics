@@ -1,0 +1,31 @@
+
+.news-menu-secondary {
+    width: 100%;
+}
+
+ul.menu-list-secondary {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-item-secondary {
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background-color: rgb(247, 246, 246);
+}
+
+.menu-item-secondary a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-item-secondary.current-page a {
+    color: white
+}
+
+.menu-item-secondary.current-page {
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+}

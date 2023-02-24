@@ -1,0 +1,26 @@
+.hero-box {
+    background-color: black;
+    color: white;
+    padding-top: 170px;
+  }
+  
+  .hero-box-title-wrapper {
+    max-width: 670px;
+    padding-bottom: 386px;
+  }
+  
+  .page-title {
+    font-size: 100px;
+    margin-top: 0;
+    margin-bottom: 23px;
+  }
+  
+  p.page-description {
+    font-size: 17px;
+    max-width: 370px;
+  }
+  
+  .service-list {
+    padding-bottom: 20px;
+  }
+  
