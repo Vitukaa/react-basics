@@ -3,24 +3,27 @@ import Moon from '../images/Moon'
 import Cap from '../images/Cap'
 
 export default function Program(props) {
-let listItems = props.extraData && props.extraData.map((item, index )=> {
-  return <li className="course-feature-item" key={index}>{item.icon}{item.text}</li>
-})
+  let { image, alt, article, description, extra, extraData } = props.program
+
+  let listItems = extraData && extraData.map((item, index )=> {
+    return <li className="course-feature-item" key={index}>{item.icon}{item.text}</li>
+  })
+  
     return (
         <div className="course-item">
         <div className="course-icon-wrapper">
           <img
-            src={props.image}
-            alt={props.alt}
+            src={image}
+            alt={alt}
             className="course-icon"
           />
         </div>
         <div className="course-title">
-          <h2 className="item-article">{props.article}</h2>
+          <h2 className="item-article">{article}</h2>
         </div>
         <div className="course-description">
           <p>
-            {props.description}
+            {description}
           </p>
         </div>
         <div className="course-features">
@@ -28,7 +31,7 @@ let listItems = props.extraData && props.extraData.map((item, index )=> {
             {listItems}
           </ul>
         </div>
-        <span className="program-extra-info">{props.extra}</span>
+        <span className="program-extra-info">{extra}</span>
       </div>
     )
 }

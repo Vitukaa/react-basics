@@ -2,16 +2,18 @@ import "./OlderNews.css";
 
 
 export default function OlderNews(props) {
+  let { image, alt, category, article, date } = props.olderNew
+
   return (
     <div className="older-news-card">
       <div className="post-card-image-small">
-        <img src={props.image} alt={props.alt} />
+        <img src={image} alt={alt} />
       </div>
       <div className="post-card-info-small">
-        <div className="post-card-category">{props.category}</div>
-        <h3 className="news-article">{props.article}
+        <div className="post-card-category">{category}</div>
+        <h3 className="news-article">{article}
         </h3>
-        <div className="post-card-date">{props.date}</div>
+        <div className="post-card-date">{date}</div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 import { Route, Routes, Link } from "react-router-dom";
+import Contacts from "./components/contacts-page/Contacts";
 import MainContent from "./components/mainContent/MainContent";
 import Naujienos from "./components/naujienos/Naujienos";
 import Programos from "./components/programos/Programos";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/codeacademy" element={<MainContent />} />
         <Route path="/codeacademy/news" element={<Naujienos />} />
         <Route path="/codeacademy/programs" element={<Programos />} />
+        <Route path="/other-projects/contacts" element={<Contacts />} />
         <Route
           path="/*"
           element={

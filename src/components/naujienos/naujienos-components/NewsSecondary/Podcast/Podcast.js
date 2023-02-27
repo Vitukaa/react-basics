@@ -1,11 +1,13 @@
 import './Podcast.css'
 
 export default function Podcast(props) {
+  let { image, alt, duration, title, date } = props.podcast
+
     return (
         <div className="audio-item">
         <div className="audio-bar">
-          <img className="audio-img" src={props.image} alt={props.alt} />
-          <p className="duration">Trukmė: {props.duration}</p>
+          <img className="audio-img" src={image} alt={alt} />
+          <p className="duration">Trukmė: {duration}</p>
           <button className="play">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -21,9 +23,9 @@ export default function Podcast(props) {
         </div>
         <div className="audio-info">
           <div className="audio-article">
-            {props.title}
+            {title}
           </div>
-          <div className="audio-date">{props.date}</div>
+          <div className="audio-date">{date}</div>
         </div>
       </div>
     )

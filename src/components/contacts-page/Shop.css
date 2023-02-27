@@ -1,0 +1,42 @@
+.shop {
+    background-color: white;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc((100% - 15px) / 2);
+}
+
+ul.shop-address-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+@media screen and (max-width: 999px) {
+    .shops-wrapper {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .shops-wrapper {
+        width: 50%;
+    }
+
+    .shop {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .shops-wrapper {
+        width: 100%;
+    }
+    .shop {
+        width: calc((100% - 15px) / 2);
+    }
+}
+
+@media screen and (max-width: 399px) {
+    .shop {
+        width: 100%;
+    }
+}

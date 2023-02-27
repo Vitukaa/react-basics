@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container.map {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+}
+
+.container.map .content-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 30px;
+}
+
+.shops-wrapper {
+    width: 50%;
+}
+
+.shops-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+
+.map-wrapper {
+    width: 50%;
+}
+
+iframe {
+    width: 100%;
+    border: 0;
+    /* width: 600px;
+    height: 450px; */
+}
+
+@media screen and (max-width: 999px) {
+    /* .shops-wrapper {
+        width: 60%;
+    } */
+
+    .map-wrapper {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    /* .shops-wrapper {
+        width: 50%;
+    } */
+
+    .map-wrapper {
+        width: 50%;
+    }
+/* 
+    .shop {
+        width: 100%;
+    } */
+}
+
+@media screen and (max-width: 599px) {
+    .container.map .content-wrapper {
+        flex-wrap: wrap;
+    }
+
+    /* .shops-wrapper {
+        width: 100%;
+    } */
+
+    .map-wrapper {
+        width: 100%;
+        order: -10;
+    }
+
+    /* .shop {
+        width: calc((100% - 15px) / 2);
+    } */
+}
+
+/* @media screen and (max-width: 399px) {
+    .shop {
+        width: 100%;
+    }
+} */
