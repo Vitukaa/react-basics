@@ -6,6 +6,20 @@ export default function CarsPage() {
     const engineTypes = ['Electric', 'Diesel', 'Petrol', 'Hybrid']
     const colors = ['Black', 'Red', 'Blue', 'Silver', 'White', 'Special blue', 'Other']
     const otherColors = ['Yellow', 'Orange', 'Purple', 'Pink', 'Green']
+    const carsArr = [
+        {
+            brand: 'bmw',
+            models: ['e39', 'e60', 'e36']
+        },
+        {
+            brand: 'volvo',
+            models: ['v60', 'v50', 'xc90'],
+        },
+        {
+            brand: 'peugeot',
+            models: ['406', '2008', '3008'],
+        }
+    ]
 
     const [ car, setCar ] = useState(null)
     const [ brand, setBrand ] = useState('')
@@ -27,7 +41,6 @@ export default function CarsPage() {
     }
 
     const engineInputHandler = (event) => {
-        console.log(event.target.selectedOptions[0].textContent)
         setEngine(event.target.selectedOptions[0].textContent)
         // setEngine(event.target.options[event.target.selectedIndex].text)
     }
@@ -73,17 +86,23 @@ export default function CarsPage() {
         setOtherColor(otherColors[0])
     }
 
-
+    console.log(!brand ? 'tuscia' : 'parasyta')
     return (
         <>
             <form onSubmit={formSubmitHandler}>
                 <div className="form-control">
                     <label htmlFor='brand'>Brand:</label>
                     <input type='text' name='brand' placeholder='Enter brand' value={brand} onChange={brandInputHandler}/>
+                    {!brand &&
+                        <span>Required input</span>
+                    }
                 </div>
                 <div className="form-control">
                     <label htmlFor='model'>Model:</label>
                     <input type='text' name='model' placeholder='Enter model' value={model} onChange={modelInputHandler} />
+                    {!model &&
+                        <span>Required input</span>
+                    }
                 </div>
                 <div className="form-control">
                     <label htmlFor='engine-type'>Engine type:</label>
@@ -94,10 +113,16 @@ export default function CarsPage() {
                 <div className="form-control">
                     <label htmlFor='price'>Price:</label>
                     <input type='text' name='price' placeholder='Enter price' value={price} onChange={priceInputHandler} />
+                    {!price &&
+                        <span>Required input</span>
+                    }
                 </div>
                 <div className="form-control">
                     <label htmlFor='mileage'>Mileage:</label>
                     <input type='number' name='mileage' placeholder='Enter mileage' value={mileage} onChange={mileageInputHandler} />
+                    {!mileage &&
+                        <span>Required input</span>
+                    }
                 </div>
                 <div className="form-control">
                     <label htmlFor='color'>Color:</label>
@@ -115,7 +140,7 @@ export default function CarsPage() {
                     </div>
                     )
                 }
-                <button type='submit'>Submit</button>
+                <button type='submit' disabled={!brand || !model || !price || !mileage}>Submit</button>
             </form>
 
             {car && (
