@@ -1,3 +1,7 @@
+.task-wrapper {
+    background-color: beige;
+}
+
 .task-done {
     text-decoration: line-through;
     color: green;
