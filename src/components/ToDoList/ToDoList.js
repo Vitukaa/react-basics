@@ -1,9 +1,11 @@
 import { useState } from "react"
+import ToDoItem from "./ToDoItem"
 import './ToDoList.css'
 
 const ToDoList = () => {
     const [input, setInput] = useState('')
     const [descriptionInput, setDesciptionInput] = useState('')
+    const [date, setDate] = useState(new Date().toLocaleString())
     const [list, setList] = useState([])
 
     const inputHandler = (event) => {
@@ -15,6 +17,10 @@ const ToDoList = () => {
         setDesciptionInput(event.target.value)
     }
 
+    const dateHandler = (event) => {
+        setDate(event.target.value)
+    }
+
 
     const submitHandler = (event) => {
         event.preventDefault()
@@ -24,18 +30,22 @@ const ToDoList = () => {
             title: input,
             description: descriptionInput,
             done: false,
+            createDate: date,
         }
 
         setList((prevState) => [...prevState, newTaskItem])
         setInput('')
         setDesciptionInput('')
+        setDate(new Date().toLocaleString())
     }
+
 
     const deleteHandler = (id) => {
         setList(prevState => {
             return prevState.filter(item => item.id !== id)
         })
     }
+
 
     const isDoneHandler = (id) => {
         setList(prevState => {
@@ -54,16 +64,21 @@ const ToDoList = () => {
 
     }
 
+
   return (
     <>
         <form onSubmit={submitHandler}>
             <div className='form-control'>
-                <label htmlFor='task'>Task:</label>
+                <label htmlFor='task'>Task title:</label>
                 <input type='text' name='task' value={input} onChange={inputHandler}></input>
             </div>
             <div className='form-control'>
                 <label htmlFor='task-description'>Task description:</label>
                 <textarea name='task-description' value={descriptionInput} onChange={descriptionInputHandler}></textarea>
+            </div>
+            <div className='form-control'>
+                <label htmlFor='task-create-date'>Task create date:</label>
+                <input type='datetime-local' name='task-create-date' value={date} onChange={dateHandler}></input>
             </div>
             
             <input type='submit' value='Add to list' disabled={!input || !descriptionInput}></input>
@@ -74,15 +89,7 @@ const ToDoList = () => {
                 <>
                     <h2>To Do list:</h2>
                     <ul>
-                        {list.map((item, index) => 
-                            <li key={index} onClick={() => isDoneHandler(item.id)}>
-                                <div className='task-wrapper'>
-                                    <h4 className={item.done ? 'task-done' : 'task'}>{item.title}</h4>
-                                    {!item.done && <p>Desciption: {item.description}</p>}
-                                    <button onClick={() => deleteHandler(item.id)}>X</button>
-                                </div>
-                            </li>
-                        )}
+                        {list.map(item => <ToDoItem key={item.id} data={item} onIsDone={isDoneHandler} onDelete={deleteHandler}/>)}
                     </ul>
                 </>
             ) : (
