@@ -1,0 +1,12 @@
+body {
+    padding: 50px;
+
+}
+
+.counter-output {
+    color: green;
+}
+
+.counter-output.red {
+    color: red;
+}

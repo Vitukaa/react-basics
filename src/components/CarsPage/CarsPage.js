@@ -1,7 +1,7 @@
 import { getByDisplayValue } from "@testing-library/react"
 import { useState } from "react"
 import Brand from "./Brand"
-import Option from "./Option"
+import CarsPageForm from "./CarsPageForm"
 
 export default function CarsPage() {
     const engineTypes = ['electric', 'diesel', 'petrol', 'hybrid']
@@ -161,70 +161,26 @@ export default function CarsPage() {
     // console.log(carsArr)
     return (
         <>
-            <form onSubmit={formSubmitHandler}>
-                <div className="form-control">
-                    <label htmlFor='brand'>Brand:</label>
-                    {/* <select name='brand' onChange={brandInputHandler}>
-                        {carsArr.map((car, index) => <Brand data={car} key={index}/>)}
-                    </select> */}
-                    <input type='text' name='brand' placeholder='Enter brand' value={brand} onChange={brandInputHandler}/>
-                    {!brand &&
-                        <span>Required input</span>
-                    }
-                </div>
-                <div className="form-control">
-                    <label htmlFor='model'>Model:</label>
-                    <input type='text' name='model' placeholder='Enter model' value={model} onChange={modelInputHandler} />
-                    {!model &&
-                        <span>Required input</span>
-                    }
-                    {/* <select name='model' onChange={modelInputHandler}></select> */}
-                </div>
-                <div className="form-control">
-                    <label htmlFor='engine-type'>Engine type:</label>
-                    <select name='engine-type' onChange={engineInputHandler} >
-                        <Option arr={engineTypes} />
-                    </select>
-                </div>
-                <div className="form-control">
-                    <label htmlFor='base-price'>Base price:</label>
-                    <input type='number' name='base-price' placeholder='Enter base price' value={basePrice} onChange={basePriceInputHandler} />
-                    {!basePrice &&
-                        <span>Required input</span>
-                    }
-                </div>
-                <div className="form-control">
-                    <label htmlFor='mileage'>Mileage:</label>
-                    <input type='number' name='mileage' placeholder='Enter mileage' value={mileage} onChange={mileageInputHandler} />
-                    {!mileage &&
-                        <span>Required input</span>
-                    }
-                </div>
-                <div className="form-control">
-                    <label htmlFor='color'>Color:</label>
-                    <select name='color' onChange={colorInputHandler}>
-                        <Option arr={colors} />
-                    </select>
-                </div>
-                {color === 'Other' && (
-                    
-                    <div className="form-control">
-                        <label htmlFor='otherColor'>Other color:</label>
-                        <select name='otherColor' onChange={otherColorInputHandler}>
-                            <Option arr={otherColors} />
-                        </select>
-                    </div>
-                    )
-                }
-                <div className="form-control">
-                    <label htmlFor='discount-code'>Discount code:</label>
-                    <input type='text' name='discount-code' placeholder='Enter discount code' value={discountCode} onChange={discountCodeInputHandler} />
-                </div>
-
-                <button type='submit' 
-                // disabled={!brand || !model || !basePrice || !mileage}
-                >Submit</button>
-            </form>
+<CarsPageForm 
+    onFormSubmit={formSubmitHandler} 
+    brand={brand} 
+    onBrandInput={brandInputHandler} 
+    model={model} 
+    onModelInput={modelInputHandler} 
+    onEngineInput={engineInputHandler} 
+    engineTypes={engineTypes} 
+    basePrice={basePrice} 
+    mileage={mileage} 
+    onBasePriceInput={basePriceInputHandler} 
+    onMileageInput={mileageInputHandler} 
+    onColorInput={colorInputHandler} 
+    onOtherColorInput={otherColorInputHandler} 
+    otherColors={otherColors} 
+    discountCode={discountCode} 
+    onDiscountCodeInput={discountCodeInputHandler} 
+    colors={colors} 
+    color={color} 
+/>
 
             {car && (
                 <div className='car-form-output'>

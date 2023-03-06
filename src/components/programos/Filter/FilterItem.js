@@ -1,10 +1,22 @@
-import { transliterate as  slugify } from "transliteration";
+import { transliterate as tr, slugify } from "transliteration";
 
 export default function FilterItem(props) {
-    let { selectName, values } = props.item
+    let { selectName, values, checkbox } = props.item
 
-    let option = values.map((value, index) => {
-        return <option value={strToValues(value)} key={index}>{value}</option>
+
+
+    let filterOption = values.map((value, index) => {
+        let strValues = strToValues(value)
+        if (!checkbox) {
+            return <option value={strValues} key={index}>{value}</option>
+        } else {
+            return (
+                <div className="filter-item-checkbox" key={index}>
+                    <input type="checkbox" name={strValues} id={strValues} />
+                    <label htmlFor={strValues}>{value}</label>
+                </div>
+            )
+        }
     })
 
     function strToValues(str) {
@@ -12,11 +24,23 @@ export default function FilterItem(props) {
     }
 
     return (
-        <div className="filter-item">
-        <label className="filter-item-name" htmlFor={selectName}>{selectName}</label>
-        <select className="medium-button" name={selectName}>
-            {option}
-        </select>
-      </div>
+        <>
+            {!checkbox &&
+            <div className="filter-item">
+                <label className="filter-item-name" htmlFor={selectName}>{selectName}</label>
+                <select className="medium-button" name={selectName}>
+                {filterOption}
+                </select>
+            </div>
+            }
+            {checkbox &&
+                <div className="filter-item">
+                    <fieldset>
+                        <legend>{selectName}</legend>
+                            {filterOption}
+                    </fieldset>
+                </div>
+            }
+        </>
     )
 }

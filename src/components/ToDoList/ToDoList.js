@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Form from "./Form"
 import ToDoItem from "./ToDoItem"
 import './ToDoList.css'
 
@@ -67,22 +68,7 @@ const ToDoList = () => {
 
   return (
     <>
-        <form onSubmit={submitHandler}>
-            <div className='form-control'>
-                <label htmlFor='task'>Task title:</label>
-                <input type='text' name='task' value={input} onChange={inputHandler}></input>
-            </div>
-            <div className='form-control'>
-                <label htmlFor='task-description'>Task description:</label>
-                <textarea name='task-description' value={descriptionInput} onChange={descriptionInputHandler}></textarea>
-            </div>
-            <div className='form-control'>
-                <label htmlFor='task-create-date'>Task create date:</label>
-                <input type='datetime-local' name='task-create-date' value={date} onChange={dateHandler}></input>
-            </div>
-            
-            <input type='submit' value='Add to list' disabled={!input || !descriptionInput}></input>
-        </form>
+        <Form onSubmit={submitHandler} input={input} onInput={inputHandler} descriptionInput={descriptionInput} onDescriptionInput={descriptionInputHandler} date={date} onDate={dateHandler} />
 
         <div className='tasks-wrapper'>
             {list && list.length > 0 ? (

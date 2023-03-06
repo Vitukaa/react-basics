@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import './CounterPage.css'
+import CounterPageCounter from './CounterPageCounter';
+import CounterPageListItem from './CounterPageListItem';
 
 
 export default function CounterPage() {
     let counterOutputDefault = 1
     const [ count, setCount ] = useState(counterOutputDefault)
+    const [numbers, setNumbers] = useState([])
 
-    const counterHandler = (num) => {
-        setCount(count + num)
-    }
-
+    
+    
+    const counterHandler = (num) => setCount(prevState => prevState + num)
+    
     const inputHandler = (event) => {
         setCount(event.target.valueAsNumber)
         
@@ -19,17 +22,38 @@ export default function CounterPage() {
             setCount(0)
         }
     }
+    
+    const numberHandler = () => {
+        const numberData = {
+            id: Math.random(),
+            number: count,
+        }
+       setNumbers(prevState => [numberData, ...prevState])
+       setCount(counterOutputDefault)
+    }
 
+    const deleteNumberHandler = (id) => {
+        setNumbers(prevState => {
+            return prevState.filter(number => number.id !== id)
+        })
+    }
 
     return (
         <>
-            <h1 className={`counter-output${+ count <= 4 ? ' red' : ''}`}>{count}</h1>
-            <input onChange={inputHandler}  type='number' max='10' min='0' value={count}/>
-            <button onClick={() => counterHandler(1)} disabled={count > 9}>+1</button>
-            <button onClick={() => counterHandler(2)} disabled={count > 8}>+2</button>
-            <button onClick={() => counterHandler(-1)} disabled={count < 1}>-1</button>
-            <button onClick={() => counterHandler(-2)} disabled={count < 2}>-2</button>
-            <button onClick={() => setCount(counterOutputDefault)}>Reset</button>
+            <CounterPageCounter count={count} onInput={inputHandler} onCounter={counterHandler} counterOutputDefault={counterOutputDefault} setCount={setCount} onNumber={numberHandler} />
+
+            {(numbers && numbers.length > 0) ?
+                <div>
+                    <h2>Saved numbers:</h2>
+                    <ul>
+                        {numbers.map((number, index) => <CounterPageListItem key={index} number={number} onDeleteNumber={deleteNumberHandler} />)}
+                    </ul>
+                </div>
+            :
+                <div>
+                    <h2>No saved numbers yet.</h2>
+                </div>
+            }
         </>
     )
 }
